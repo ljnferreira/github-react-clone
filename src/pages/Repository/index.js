@@ -4,7 +4,7 @@ import api from '../../services/api'
 
 import { Container } from './styles';
 
-function Repository({match}) {
+function Repository({match}, props) {
   const [repoData, setRepoData] = useState();
 
   useEffect(() => {
