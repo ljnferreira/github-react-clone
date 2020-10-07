@@ -5,6 +5,7 @@ export default createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-size: 10px;
   }
   html, body, #root{
     max-height: 100vh;
