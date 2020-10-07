@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 
 import { Container } from './styles';
+import ProfileInfo from '../../components/ProfileInfo';
 
 import api from '../../services/api';
 
@@ -11,9 +12,9 @@ function Profile({match}, props) {
     async function load(){
       const user = decodeURIComponent(match.params.user);
 
-      const userData = await api.get(`/users/${user}`);
+      const userInfo = await api.get(`/users/${user}`);
 
-      setUserData(userData.data);
+      setUserData(userInfo.data);
 
     }
 
@@ -23,9 +24,7 @@ function Profile({match}, props) {
 
   return (
     <Container>
-      <img src={userData?.avatar_url} alt={userData?.name}/>
-      <h1>{userData?.name}</h1>
-      <h2>{userData?.login}</h2>
+      <ProfileInfo data={userData}/>
     </Container>
 
   );
